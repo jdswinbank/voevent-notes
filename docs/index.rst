@@ -22,8 +22,6 @@ useful.
 .. _International Virtual Observatory Alliance: http://www.ivoa.net/
 .. _Hot-Wiring the Transient Universe IV: http://lcogt.net/hotwired-iv-welcome
 
-Contents:
-
 .. toctree::
    :maxdepth: 2
 
