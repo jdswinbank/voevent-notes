@@ -20,7 +20,7 @@ pretty easy to tease out a few details.
 
 The first thing that should be immediately obvious are the blocks referring to
 the who, what, where & when, how, and why that we :ref:`previously discussed
-<voevent-standard>`_.
+<voevent-standard>`.
 
 The ``Who`` block in lines 8 to 14 tells us that this event was generated back
 in 1970 by an author who was eagerly anticipating this tutorial session.
