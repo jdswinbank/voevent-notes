@@ -33,6 +33,8 @@ their peers to organize telescope time.
 .. _Square Kilometre Array: http://www.skatelescope.org/
 .. _Large Synoptic Survey Telescope: http://www.lsst.org/
 
+.. _voevent-standard:
+
 The VOEvent standard
 ====================
 
