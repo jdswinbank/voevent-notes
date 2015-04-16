@@ -62,7 +62,7 @@ want to use this environment.
 .. _Digital Ocean: https://www.digitalocean.com/
 .. _you can help: https://twistedmatrix.com/trac/wiki/Plan/Python3
 .. _Virtualenv: https://virtualenv.pypa.io/
-.. _libxml2 and libxsl: http://xmlsoft.org/
+.. _libxml2 and libxslt: http://xmlsoft.org/
 .. _zlib: http://zlib.net/
 .. _IPython: http://ipython.org/
 
