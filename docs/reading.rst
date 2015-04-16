@@ -1,3 +1,5 @@
+.. _voevent-reading:
+
 =======================
 A look inside a VOEvent
 =======================
