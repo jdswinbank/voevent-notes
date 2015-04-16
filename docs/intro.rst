@@ -9,8 +9,8 @@ Systems for detecting astrophysical transients are becoming increasingly
 ubiquitous and high volume: from space-based gamma-ray monitors like NASA's
 `Fermi`_ and `Swift`_ missions, through present-day ground based surveys in
 both the optical (e.g. the `Catalina Real-Time Transients Survey`_ and the
-`Palomar Transients Factory`_) and radio (the `LOFAR Radio Sky Monitory`_ and
-`ASKAP's`_ `Variables and Slow Transients`_ survey), to future facilities such
+`Palomar Transients Factory`_) and radio (the `LOFAR Radio Sky Monitor`_ and
+`ASKAP`_'s `Variables and Slow Transients`_ survey), to future facilities such
 as the `Square Kilometre Array`_ (SKA) and `Large Synoptic Survey Telescope`_
 (LSST). LSST alone promises to detect and announce up to 40 million transients
 per night when its survey begins early in the 2020s.
