@@ -18,9 +18,12 @@ Session" presented at `Hot-Wiring the Transient Universe IV`_ (henceforth
 "Hotwired 4") in May 2015; we hope, though, that it will prove generally
 useful.
 
+We assume a working knowledge of `Python`_.
+
 .. _VOEvent: http://www.voevent.org/
 .. _International Virtual Observatory Alliance: http://www.ivoa.net/
 .. _Hot-Wiring the Transient Universe IV: http://lcogt.net/hotwired-iv-welcome
+.. _Python: http://www.python.org/
 
 .. toctree::
    :maxdepth: 2
