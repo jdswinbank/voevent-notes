@@ -69,8 +69,8 @@ defines an XML "schema", which describes the subset of all possible constructs
 which it is legal to use in a VOEvent document. As we'll see :ref:`later
 <voevent-reading>`, it's perfectly possible to read and write VOEvents using
 your favourite text editor. However, that's a lot of effort; there is a range
-of tools and libraries you can deploy to make your life easier. We'll cover
-them too.
+of tools and libraries you can deploy to make your life easier. We'll :ref:`cover
+them too <voe-parse>`.
 
 The VOEvent standard was defined by :ref:`Seaman et al. (2011)
 <seaman-2011>` and it has an official stamp of approval from the `IVOA`_. It

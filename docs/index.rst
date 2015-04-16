@@ -31,7 +31,7 @@ We assume a working knowledge of `Python`_.
    intro
    setup
    reading
-   writing
+   parse
    receiving
    sending
    future
