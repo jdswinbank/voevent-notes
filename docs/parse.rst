@@ -110,3 +110,23 @@ Note that we are checking against the VOEvent version 2.0 schema, which is the
 latest version and is definitely what you should be using.
 
 .. _VOEvent schema: http://www.ivoa.net/xml/VOEvent/VOEvent-v2.0.xsd
+
+Creating a VOEvent
+==================
+
+Having seen how we can use voevent-parse to read a VOEvent, the next step is
+to create one. In order to make this a bit more interesting, let's use a
+real transient. `Gaia`_ has recently started publishing `Photometric Science
+Alerts`_ to a publicly-accessible website, but they aren't yet available as
+VOEvents. Let's pick on the following:
+
++-----------+------------+------------+-----------+-------------+-----------+----------+----------+---------+-------------------------------+
+| Name      | Observed   | Published  | RA (deg.) | Dec. (deg.) | Magnitude | Historic | Historic | Class   | Comment                       |
+|           |            |            |           |             |           | mag.     | scatter  |         |                               |
++===========+============+============+===========+=============+===========+==========+==========+=========+===============================+
+| Gaia14adi | 2014-11-07 | 2014-12-02 | 168.47841 | -23.01221   | 18.77     | 19.62    | 0.07     | unknown | Fading source on top of 2MASS |
+|           | 01:05:09   | 13:55:54   |           |             |           |          |          |         | Galaxy (offset from bulge)    |
++-----------+------------+------------+-----------+-------------+-----------+----------+----------+---------+-------------------------------+
+
+.. _Gaia: http://sci.esa.int/gaia/
+.. _Photometric Science Alerts: http://gsaweb.ast.cam.ac.uk/alerts/
