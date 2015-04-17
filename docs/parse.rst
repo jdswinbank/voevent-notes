@@ -111,6 +111,8 @@ latest version and is definitely what you should be using.
 
 .. _VOEvent schema: http://www.ivoa.net/xml/VOEvent/VOEvent-v2.0.xsd
 
+.. _voevent-create:
+
 Creating a VOEvent
 ==================
 

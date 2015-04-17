@@ -35,6 +35,8 @@ just provides a free-form text description of how the observation was made,
 and ``Why`` identifies this with a GRB taking place in 2012 (nearly 43 years
 after this observation was made---not bad!).
 
+.. _voevent-roles:
+
 Event roles
 ===========
 
