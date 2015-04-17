@@ -117,7 +117,7 @@ Depending on the source of the event, it might be "obvious" to the human that
 radiation. However, the computer which might be automatically processing and
 making decisions based on this VOEvent needs all the help it can get. To that
 end, we can annotate the event with `Unified Content Descriptors`_, or UCDs
-(:ref:`Derrier et al, 2005 <derriere-2005>`). For example, we write
+(:ref:`Derriere et al, 2005 <derriere-2005>`). For example, we write
 
 .. code-block:: xml
 
