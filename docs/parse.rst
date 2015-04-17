@@ -177,9 +177,12 @@ optimistically using ``0``::
                               obs_time=datetime.datetime(2014, 11, 7, 1, 5, 9),
                               observatory_location="Gaia")
 
-We should also describe how this transient was detected::
+We should also describe how this transient was detected, and refer to the name
+that Gaia have assigned it. Note that we can provide multiple descriptions
+(and/or references) here::
 
-   In [12]: vp.add_how(v, descriptions='Scraped from the Gaia website',
+   In [12]: vp.add_how(v, descriptions=['Scraped from the Gaia website',
+                                        'This is Gaia14adi'],
                        references=vp.Reference("http://gsaweb.ast.cam.ac.uk/alerts/"))
 
 Finally, we can provide some information about why this even might be
@@ -252,6 +255,7 @@ formatted. You can use a tool like ``xmllint`` to pretty print it.
      <Description>This is not an offical Gaia data product.</Description>
      <How>
        <Description>Scraped from the Gaia website</Description>
+       <Description>This is Gaia14adi</Description>
        <Reference uri="http://gsaweb.ast.cam.ac.uk/alerts/"/>
      </How>
      <Why>
