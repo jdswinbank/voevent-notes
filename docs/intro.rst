@@ -1,3 +1,5 @@
+.. _intro:
+
 ===========================================
 What is a VOEvent and why would I want one?
 ===========================================
@@ -134,7 +136,7 @@ Maybe after reading this you will be inspired to contribute.
 We'll return to this point later in considering :ref:`some of the challenges
 <voevent-future>` facing VOEvent in the future.
 
-.. _VOEvent Transport Protocol: http://www.ivoa.net/
+.. _VOEvent Transport Protocol: http://www.ivoa.net/documents/Notes/VOEventTransport/
 .. _revised version: https://github.com/jdswinbank/vtp
 .. _HTTP: http://www.w3.org/Protocols/
 

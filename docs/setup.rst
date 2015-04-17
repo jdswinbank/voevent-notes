@@ -1,3 +1,5 @@
+.. _voevent-setup:
+
 ===================================
 Finding and installing useful tools
 ===================================
