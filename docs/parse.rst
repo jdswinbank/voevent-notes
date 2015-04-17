@@ -128,5 +128,136 @@ VOEvents. Let's pick on the following:
 |           | 01:05:09   | 13:55:54   |           |             |           |          |          |         | Galaxy (offset from bulge)    |
 +-----------+------------+------------+-----------+-------------+-----------+----------+----------+---------+-------------------------------+
 
+We'll start by creating the skeleton of our VOEvent packet. We carefully to
+set the role to ``test`` so that nobody is tempted to start acting on the
+contents of this demo event. We also set the timestamp in the ``Who`` block to
+the time the event was generated (*not* when the observation was made), as per
+the specification::
+
+   In [1]: import voeventparse as vp
+
+   In [2]: import datetime
+
+   In [3]: v = vp.Voevent(stream='hotwired.org/gaia_demo', stream_id=1,
+                          role=vp.definitions.roles.test)
+
+   In [4]: vp.set_who(v, datetime.datetime.utcnow())
+
+Now to define the author. Note that this is *us*, since we're generating the
+VOEvent---this isn't an official Gaia product, and we neither want to claim
+credit for the result outselves, nor do we want people to start hassling the
+Gaia folks with questions about our event. We'll make sure that's noted in the
+explanatory text attached to the event::
+
+   In [5]: vp.set_author(v, title="Hotwired VOEvent Hands-on",
+                         contactName="John Swinbank")
+
+   In [6]: v.Description = "This is not an offical Gaia data product."
+
+Now let's add details of the observation itself. We'll record both the
+magnitude that Gaia is reporting for this particular event, and the historic
+values they also provide::
+
+   In [7]: v.What.append(vp.Param(name="mag", value=18.77, ucd="phot.mag"))
+
+   In [8]: h_m = vp.Param(name="hist_mag", value=19.62, ucd="phot.mag")
+
+   In [9]: h_s = vp.Param(name="hist_scatter", value=0.07, ucd="phot.mag")
+
+   In [10]: v.What.append(vp.Group(params=[h_m, h_s], name="historic"))
+
+Now we need to specify where and when the observation was made. Rather than
+trying to specify a position for Gaia, we'll just call it out by name. Note
+that Gaia don't provide erorrs on the position they cite, so we're rather
+optimistically using ``0``::
+
+   In [11]: vp.add_where_when(v,
+                              coords=vp.Position2D(ra=168.47841, dec=-23.01221, err=0, units='deg',
+                                                   system=vp.definitions.sky_coord_system.fk5),
+                              obs_time=datetime.datetime(2014, 11, 7, 1, 5, 9),
+                              observatory_location="Gaia")
+
+We should also describe how this transient was detected::
+
+   In [12]: vp.add_how(v, descriptions='Scraped from the Gaia website',
+                       references=vp.Reference("http://gsaweb.ast.cam.ac.uk/alerts/"))
+
+Finally, we can provide some information about why this even might be
+scientifically interesting. Gaia haven't provided a classification, but we can
+at least incorporate the textual description::
+
+   In [13]: vp.add_why(v)
+
+   In [14]: v.Why.Description = "Fading source on top of 2MASS Galaxy (offset from bulge)"
+
+Finally---and importantly, as we discussed above---let's make sure that this
+event is really valid according to our schema::
+
+   In [15]: vp.valid_as_v2_0(v)
+   True
+
+Great! We can now save it to disk::
+
+   In [16]: with open('gaia.xml', 'w') as f:
+                vp.dump(v, f)
+
+And we're all done. You can open the file in your favourite editor to see what
+we've produced, but note that it probably won't be particularly elegantly
+formatted. You can use a tool like ``xmllint`` to pretty print it.
+
+.. code-block:: xml
+
+   $ xmllint --format gaia.xml
+   <?xml version="1.0" encoding="UTF-8"?>
+   <voe:VOEvent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:voe="http://www.ivoa.net/xml/VOEvent/v2.0" xsi:schemaLocation="http://www.ivoa.net/xml/VOEvent/v2.0 http://www.ivoa.net/xml/VOEvent/VOEvent-v2.0.xsd" version="2.0" role="test" ivorn="ivo://hotwired.org/gaia_demo#1">
+     <Who>
+       <Description>VOEvent created with voevent-parse: https://github.com/timstaley/voevent-parse</Description>
+       <Date>2015-04-17T15:52:56</Date>
+       <Author>
+         <title>Hotwired VOEvent Hands-on</title>
+         <contactName>John Swinbank</contactName>
+       </Author>
+     </Who>
+     <What>
+       <Param dataType="float" name="mag" ucd="phot.mag" value="18.77"/>
+       <Group name="historic">
+         <Param dataType="float" name="hist_mag" ucd="phot.mag" value="19.62"/>
+         <Param dataType="float" name="hist_scatter" ucd="phot.mag" value="0.07"/>
+       </Group>
+     </What>
+     <WhereWhen>
+       <ObsDataLocation>
+         <ObservatoryLocation id="Gaia"/>
+         <ObservationLocation>
+           <AstroCoordSystem id="UTC-FK5-GEO"/>
+           <AstroCoords coord_system_id="UTC-FK5-GEO">
+             <Time unit="s">
+               <TimeInstant>
+                 <ISOTime>2014-11-07T01:05:09</ISOTime>
+               </TimeInstant>
+             </Time>
+             <Position2D unit="deg">
+               <Name1>RA</Name1>
+               <Name2>Dec</Name2>
+               <Value2>
+                 <C1>168.47841</C1>
+                 <C2>-23.01221</C2>
+               </Value2>
+               <Error2Radius>0</Error2Radius>
+             </Position2D>
+           </AstroCoords>
+         </ObservationLocation>
+       </ObsDataLocation>
+     </WhereWhen>
+     <Description>This is not an offical Gaia data product.</Description>
+     <How>
+       <Description>Scraped from the Gaia website</Description>
+       <Reference uri="http://gsaweb.ast.cam.ac.uk/alerts/"/>
+     </How>
+     <Why>
+       <Description>Fading source on top of 2MASS Galaxy (offset from bulge)</Description>
+     </Why>
+   </voe:VOEvent>
+
 .. _Gaia: http://sci.esa.int/gaia/
 .. _Photometric Science Alerts: http://gsaweb.ast.cam.ac.uk/alerts/
