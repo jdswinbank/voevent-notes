@@ -54,15 +54,15 @@ this is certainly a problem for the :ref:`future <voevent-future>`.
 Subscribing to a broker
 =======================
 
-We'll start by using `Comet`_ to subscribe to a feed of events from a broker.
-Assuming you've got Comet installed (see our :ref:`instructions
-<voevent-setup>`), you can control Comet using the ``twistd`` command. By
-default, ``twistd`` assumes you want to run Comet as a *daemon* (that is, a
-long running background process, which communicates with the outside world by
-log message rather than through your terminal). That's convenient a lot of the
-time, but it's something we want to avoid for the sake of this terminal. We
-can do so by giving ``twistd`` a ``-n`` flag, then telling it we want to run
-Comet::
+We'll start by using `Comet`_ (:ref:`Swinbank, 2014 <swinbank-2014>`) to
+subscribe to a feed of events from a broker.  Assuming you've got Comet
+installed (see our :ref:`instructions <voevent-setup>`), you can control Comet
+using the ``twistd`` command. By default, ``twistd`` assumes you want to run
+Comet as a *daemon* (that is, a long running background process, which
+communicates with the outside world by log message rather than through your
+terminal). That's convenient a lot of the time, but it's something we want to
+avoid for the sake of this terminal. We can do so by giving ``twistd`` a
+``-n`` flag, then telling it we want to run Comet::
 
    $ twistd -n comet --help
    Usage: twistd [options]
@@ -160,3 +160,50 @@ inspiration.
 .. _fourpiskytools: https://github.com/timstaley/fourpiskytools
 .. _rather more elaborate: https://github.com/timstaley/fourpiskytools/blob/master/examples/process_voevent_from_stdin.py
 .. _source of those commands: https://github.com/jdswinbank/Comet/blob/master/comet/plugins/eventwriter.py
+
+Filtering event streams
+=======================
+
+The VTP standard does not provide for a way to select which events you
+receive: brokers distribute all events received to all of their subscribers.
+That's ok as long as the volume of events remains relatively low and the
+subscribers are all willing to get their hands dirty writing scripts locally
+to extract the information they want. Ultimately, though, it's more efficient
+for subscribers to be able to select only those events they are interested in
+receiving from the broker.
+
+Although this is not possible using vanilla VTP, Comet introduces its own
+extension to the protocol which enables the subscriber to ask the broker to
+send only events which match certain criteria to the subscriber. For this, we
+use the `XPath`_ XML query language. For example, to select only those events
+which were issued by `VO-GCN`_ (ie, originate from the NASA `Gamma-ray
+Coordinates Network`_), we can use::
+
+   $ twistd -n comet [...] --filter="//Who/Author[shortName='VO-GCN']"
+
+Of course, as usual when processing VOEvents, we need to know something about
+the structure of the events we're interested in. If we know, for example, that
+the event contains a ``Sun_Distance`` parameter, we can make selections based
+on that::
+
+   $ twistd -n comet [...] --filter="//Param[@name='Sun_Distance' and @value>40]"
+
+Quite complex expressions are possible: for more examples, refer to the
+:ref:`Comet documentation on filtering <comet:sec-filtering>` and
+:ref:`Swinbank (2014) <swinbank-2014>`. Unfortunately, the XPath language is
+complex, and, as mentioned, you need to have a good understanding of the event
+stream you are trying to filter before you can construct useful queries.
+Furthermore, this is a Comet specific extension: it requires that *both* the
+subscriber *and* the broker be running Comet. If that's not the case, it won't
+do any harm to the network, but the filtering will not be applied.
+
+However, there's a more far-reaching issue than the problems described above:
+although XPath is powerful, it doesn't ultimately provide the sort of
+filtering and selection capability that will be needed to handle the event
+volumes and complexities expected from future surveys. We'll :ref:`return
+<voevent-future>` to this point. But first, let's discuss how to send events,
+as well as receive them.
+
+.. _XPath: http://www.w3.org/TR/xpath/
+.. _VO-GCN: http://gcn.gsfc.nasa.gov/admin/voevent_version20_available.txt
+.. _Gamma-ray Coordinates Network: http://gcn.gsfc.nasa.gov/
