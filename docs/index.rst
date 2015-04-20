@@ -4,7 +4,7 @@ Notes on VOEvent
 
 `VOEvent`_ is the `International Virtual Observatory Alliance`_ (IVOA)
 recommended mechanism for describing astronomical transients. Specifically, the
-VOEvent standard
+VOEvent standard :ref:`(Seaman, 2011) <seaman-2011>`
 
   defines the content and meaning of a standard information packet for
   representing, transmitting, publishing and archiving information about a
