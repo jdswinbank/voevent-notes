@@ -1,3 +1,5 @@
+.. _voevent-sending:
+
 =====================
 Distributing VOEvents
 =====================
