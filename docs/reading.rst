@@ -59,7 +59,7 @@ That said, there are three other possible roles we should mention.
 ``observation`` is the obvious one: it's reporting the results of a particular
 observation. ``utility`` is informing the recipient about details of the
 observing system; for example, a change in configuration. Finally,
-``prediction`` indicates that the author is indulding in a little fortune
+``prediction`` indicates that the author is indulging in a little fortune
 telling.
 
 IVORNs and identifiers
