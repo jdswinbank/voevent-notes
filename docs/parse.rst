@@ -15,7 +15,7 @@ handling XML available---see, for example, the documentation for the `Python
 standard library`_.
 
 While it's possible to directly apply these generic XML handling tools to
-VOEvents, it's even more convenient to use a libary which has been especially
+VOEvents, it's even more convenient to use a library which has been especially
 developed to work with VOEvents. Here, we are using `voevent-parse`_ which
 does just that. Voevent-parse builds on the popular `lxml`_ library: while
 we'll cover all the material you need to get started here, we refer you to
@@ -47,7 +47,7 @@ the ``voevent.xml`` file from disk::
    Out[3]: <Element VOEvent at 0x104747560>
 
 The basic "attributes" (the ``role`` and the ``ivorn``, as well as some of the
-XML boilerplate that we skipped over) of the root ``VOevent`` element are accessible as a
+XML boilerplate that we skipped over) of the root ``VOEvent`` element are accessible as a
 dictionary on ``v``::
 
    In [4]: v.attrib['ivorn']
@@ -147,14 +147,14 @@ the specification::
 
 Now to define the author. Note that this is *us*, since we're generating the
 VOEvent---this isn't an official Gaia product, and we neither want to claim
-credit for the result outselves, nor do we want people to start hassling the
+credit for the result ourselves, nor do we want people to start hassling the
 Gaia folks with questions about our event. We'll make sure that's noted in the
 explanatory text attached to the event::
 
    In [5]: vp.set_author(v, title="Hotwired VOEvent Hands-on",
                          contactName="John Swinbank")
 
-   In [6]: v.Description = "This is not an offical Gaia data product."
+   In [6]: v.Description = "This is not an official Gaia data product."
 
 Now let's add details of the observation itself. We'll record both the
 magnitude that Gaia is reporting for this particular event, and the historic
@@ -170,7 +170,7 @@ values they also provide::
 
 Now we need to specify where and when the observation was made. Rather than
 trying to specify a position for Gaia, we'll just call it out by name. Note
-that Gaia don't provide erorrs on the position they cite, so we're rather
+that Gaia don't provide errors on the position they cite, so we're rather
 optimistically using ``0``::
 
    In [11]: vp.add_where_when(v,

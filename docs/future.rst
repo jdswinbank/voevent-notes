@@ -12,7 +12,7 @@ challenges to be solved both in delivering results that are of the greatest
 scientific relevance and in scaling to address next-generation surveys. Here,
 we highlight just a few areas where we suggest more work is needed.
 
-It's worth emphasizing that the aim here is not to dimiss the achievements of
+It's worth emphasizing that the aim here is not to dismiss the achievements of
 the VOEvent community to date, or question its viability in the future.
 Rather, see this as a call-to-arms, and please jump in when you have something
 to contribute.
@@ -37,7 +37,7 @@ that *might* be a genuine alert from Gaia? Well, it's your call...
 Broadly, there are two ways you might try to tackle this problem. One is to
 authenticate the transport mechanism: you know that this is a genuine event
 because you got it directly from Gaia. That's possible using VTP, since Gaia
-could run a broker and you could susbcribe to it directly. It nullifies the
+could run a broker and you could subscribe to it directly. It nullifies the
 advantages of the distributed VOEvent network, though, and it means that
 effectively every project distributing events will have to run their own
 broker, or find some way of delegating permissions.
@@ -87,7 +87,7 @@ A potential solution to this is to invoke the IVOA Registry (:ref:`Demleitner,
 2014 <demleitner-2014>`). Work on `an extension`_ to the existing registry
 standards to describe VOEvent and its supporting infrastructure is underway.
 But even from there, it's a long way to an approachable, user-friendly way of
-figuring out which resources area vailable to the end user.
+figuring out which resources are available to the end user.
 
 .. _TDIG website: http://www.voevent.org/
 .. _an extension: http://www.ivoa.net/documents/VOEventRegExt/20140513/index.html

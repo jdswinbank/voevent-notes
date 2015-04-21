@@ -48,7 +48,7 @@ It enables the author to specify:
 * *What* they have observed;
 * *Where and when* the observed it;
 * *How* the observations were made;
-* *Why* they think it is of general interst to the community.
+* *Why* they think it is of general interest to the community.
 
 In addition, it is possible for them to provide citations to previously
 announced events, and to refer to other content outside the context of the

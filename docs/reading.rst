@@ -49,7 +49,7 @@ top of the event we have the string:
    role="test"
 
 This is *important*. It serves as notice to recipients that the event does not
-describe an actual astronomical evet. If you are experimenting with VOEvent,
+describe an actual astronomical event. If you are experimenting with VOEvent,
 you should *always* use the ``test`` role, even if you don't intend for your
 events to be published: if one should leak of your sandbox, it could be
 horribly expensive if somebody mistakes it for a notice of a genuine transient

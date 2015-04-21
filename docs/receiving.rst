@@ -78,7 +78,7 @@ you're curious, you can always refer to the Comet documentation for details.
 
 There are just a couple of options we need to get started. The first is to
 decide on an identifier for our local system. Just like :ref:`VOEvents
-themselves <voevent-reading>`, entities on the network are identivied by means
+themselves <voevent-reading>`, entities on the network are identified by means
 of a URL-like ``ivo://`` identifier. It doesn't matter much what you choose,
 as long as you follow the required format. Let's go with
 ``ivo://hotwired.org/test`` for now.
@@ -166,7 +166,7 @@ Filtering event streams
 
 The VTP standard does not provide for a way to select which events you
 receive: brokers distribute all events received to all of their subscribers.
-That's ok as long as the volume of events remains relatively low and the
+That's OK as long as the volume of events remains relatively low and the
 subscribers are all willing to get their hands dirty writing scripts locally
 to extract the information they want. Ultimately, though, it's more efficient
 for subscribers to be able to select only those events they are interested in
