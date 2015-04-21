@@ -81,7 +81,7 @@ brokers offer?
 
 The brief answer is that, at the moment, there's no reliable way to do this.
 They best you can hope is that you might find something on the list of brokers
-on the `TDIG website`_, but event that is rather hit-or-miss.
+on the `TDIG website`_, but even that is rather hit-or-miss.
 
 A potential solution to this is to invoke the IVOA Registry (:ref:`Demleitner,
 2014 <demleitner-2014>`). Work on `an extension`_ to the existing registry
