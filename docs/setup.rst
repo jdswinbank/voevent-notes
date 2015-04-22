@@ -8,12 +8,10 @@ We'll start by installing two useful tools for working with VOEvents in the
 `Python`_ programming language. It's impossible to provide comprehensive
 instructions for every possible operating system, but the good news is that
 the tools are generally pretty easy to install. We'll discuss then general
-principles, and go through step-by-step instructions for `Ubuntu`_ `14.04.2`_
-step by step.
+principles, and provide step-by-step instructions for common platforms---you
+should be able to adapt these to your own system.
 
 .. _Python: http://www.python.org/
-.. _Ubuntu: http://www.ubuntu.com/
-.. _14.04.2: http://releases.ubuntu.com/14.04.2/
 
 Background and dependencies
 ===========================
@@ -21,7 +19,7 @@ Background and dependencies
 In general, we suggest relying on package management tools where possible,
 rather than attempting to compile everything from scratch. For Python
 packages, we'll use `pip`_; for system libraries, use a package manager
-appropriate to your operating system (`APT`_ for `Debian`_, Ubuntu and related
+appropriate to your operating system (`APT`_ for `Debian`_, `Ubuntu`_ and related
 systems; `Macports`_ or `Homebrew`_ on `OS X`_, etc). If you don't have
 permission to use one of these systems, ask your system administrator nicely
 (or, better, get yourself a cheap-as-chips VM from `Amazon EC2`_ or `Digital
@@ -38,14 +36,27 @@ when you make a mistake simply by running ``rm``.
 In addition to Python, pip and Virtualenv, you will need to install `libxml2
 and libxslt`_. You'll need the header files for `zlib`_ (the library itself
 was almost certainly installed along with your operating system). You'll also
-find `IPython`_ useful for following along with our examples. On Ubuntu::
+find `IPython`_ useful for following along with our examples. This is a good
+time to look into package managers, as mentioned above. On Ubuntu `14.04.2`_::
 
-  # Install dependencies.
+  $ sudo apt-get update
   $ sudo apt-get install libxml2-dev libxslt-dev zlib1g-dev python-dev python-pip python-virtualenv ipython
-  [...]
 
-  # Create a Virtualenv for working in and activate it. The name is arbitrary;
-  # call it whatever you like.
+Or with OS X using Macports, try::
+
+  $ sudo port selfupdate
+  $ sudo port install libxml2 libxslt python27 py27-pip py27-virtualenv py27-ipython
+
+  # Use the software we've just installed as the default versions
+  $ sudo port select python python27
+  $ sudo port select pip pip27
+  $ sudo port select virtualenv virtualenv27
+  $ sudo port select ipython ipython27
+
+Similar incantations should work on other systems. Next, create a Virtualenv
+for working in and activate it. The name is arbitrary; call it whatever you
+like::
+
   $ virtualenv voevent-venv
   New python executable in voevent-venv/bin/python
   Installing setuptools, pip...done.
@@ -57,6 +68,7 @@ want to use this environment.
 .. _pip: https://pip.pypa.io/
 .. _apt: https://en.wikipedia.org/wiki/Advanced_Packaging_Tool
 .. _Debian: http://www.debian.org/
+.. _Ubuntu: http://www.ubuntu.com/
 .. _Macports: http://www.macports.org/
 .. _Homebrew: http://brew.sh/
 .. _OS X: http://apple.com/osx/
@@ -67,6 +79,7 @@ want to use this environment.
 .. _libxml2 and libxslt: http://xmlsoft.org/
 .. _zlib: http://zlib.net/
 .. _IPython: http://ipython.org/
+.. _14.04.2: http://releases.ubuntu.com/14.04.2/
 
 Reading and writing VOEvents: voevent-parse
 ===========================================
