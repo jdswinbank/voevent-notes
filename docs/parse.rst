@@ -17,14 +17,19 @@ standard library`_.
 While it's possible to directly apply these generic XML handling tools to
 VOEvents, it's even more convenient to use a library which has been especially
 developed to work with VOEvents. Here, we are using `voevent-parse`_ which
-does just that. Voevent-parse builds on the popular `lxml`_ library: while
-we'll cover all the material you need to get started here, we refer you to
-`lxml's documentation`_ for details.
+does just that. Voevent-parse builds on the popular `lxml`_ library.
+
+The examples below should be just enough to get you started with voevent-parse.
+An expanded version which goes into a little more detail on the syntax quirks
+of the lxml library is also available in IPython Notebook format as
+the `voevent-parse-tutorial`_,
+In addition, we refer you to `lxml's documentation`_ for full details.
 
 .. _Python standard library: https://docs.python.org/2/library/xml.html
 .. _voevent-parse: https://github.com/timstaley/voevent-parse/
 .. _lxml: http://lxml.de/
 .. _lxml's documentation: http://lxml.de/index.html#documentation
+.. _voevent-parse-tutorial: https://github.com/timstaley/voevent-parse-tutorial
 
 Parsing a VOEvent
 =================
