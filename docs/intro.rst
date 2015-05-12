@@ -130,8 +130,9 @@ future science projects. We need to build upon these lower level tools to
 construct event aggregators and filters and classifiers and distribution
 systems which make it possible for the astronomer to reason about and respond
 to VOEvents in bulk. While some important work has been done on this (e.g.
-:ref:`Williams et al, 2009 <williams-2009>`), there's still a long way to go.
-Maybe after reading this you will be inspired to contribute.
+:ref:`Williams et al, 2009 <williams-2009>`, :ref:`Poci et al, 2015
+<poci-2015>`), there's still a long way to go. Maybe after reading this you
+will be inspired to contribute.
 
 We'll return to this point later in considering :ref:`some of the challenges
 <voevent-future>` facing VOEvent in the future.

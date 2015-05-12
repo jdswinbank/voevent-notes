@@ -28,6 +28,11 @@ Version 1.1*. International Virtual Observatory Alliance Note, August 2008.
 Version 1.1*. International Virtual Observatory Alliance Recommendation,
 August 2005.
 
+.. _poci-2015:
+
+`Poci, A. et al`_, *DESAlert: Enabling Real-Time Transient Follow-Up with Dark
+Energy Survey Data*, submitted to PASA, April 2015.
+
 .. _seaman-2011:
 
 `Seaman, R. et al`_, *Sky Event Reporting Metadata, Version 2.0*. International
@@ -48,6 +53,7 @@ Robots*, Proceedings of ADASS XVIII, ASP Conf. Ser 411, 115, 2009.
 .. _Denny, R.B.: http://www.ivoa.net/documents/Notes/VOEvent/VOEventDigiSig-20080514.html
 .. _Demleitner, M. et al: http://adsabs.harvard.edu/abs/2014A%26C.....7..101D
 .. _Derriere, S. et al: http://www.ivoa.net/documents/REC/UCD/UCD-20050812.html
+.. _Poci, A. et al: http://adsabs.harvard.edu/abs/2015arXiv150402996P
 .. _Seaman, R. et al: http://www.ivoa.net/documents/VOEvent/20110711/REC-VOEvent-2.0.pdf
 .. _Swinbank, J.: http://adsabs.harvard.edu/abs/2014A%26C.....7...12S
 .. _Williams, R.D. et al: http://adsabs.harvard.edu/abs/2009ASPC..411..115W
