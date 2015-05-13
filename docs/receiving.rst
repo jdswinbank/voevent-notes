@@ -131,12 +131,12 @@ Realistically, of course, you'll want to be able to take action when you
 receive an event. Comet gives you a couple of options here. One is to invoke a
 command whenever an event is received, passing it that event on standard
 input. You can use this to perform whatever logic you require. For example, we
-could make a quick & dirty VOEvent-to-e-mail gateway::
+could make a quick & dirty VOEvent-to-e-mail gateway using a script like this:
 
-   $ cat mail.sh
-   #!/bin/bash
+.. literalinclude:: mail.sh
+   :language: bash
 
-   /usr/bin/mail -s "VOEvent Received" email@address.invalid <&0
+Then simply::
 
    $ twistd -n comet [...] --cmd=$(pwd)/mail.sh
 
