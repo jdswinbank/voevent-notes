@@ -11,6 +11,13 @@ the tools are generally pretty easy to install. We'll discuss then general
 principles, and provide step-by-step instructions for common platforms---you
 should be able to adapt these to your own system.
 
+Broadly speaking, there are two possible approaches you can take to getting an
+appropriate set of tools on your system: you can either build & install them
+yourself---the "conventional" way---or use some sort of prepackaged
+environment which has everything you need already installed in it. This
+document focuses on the first option, but includes a :ref:`brief discussion
+<container>` of the second approach.
+
 .. _Python: http://www.python.org/
 
 Background and dependencies
@@ -65,24 +72,6 @@ like::
 You will need to source the ``activate`` script in this way every time you
 want to use this environment.
 
-Finally, you can use `docker`_ to quickly build all of the above for use in
-a Jupyter (`IPython`_) notebook. Docker uses "containerization" (a kind of virtual
-machine) to build entire operating systems and save you a lot of work.
-If you choose to go this route, you'll need to `install docker`_. Then
-download the Dockerfile for the `docker notebook`_ to an empty directory and 
-run:
-
-  $ docker build -t notebook .
-  $ docker run -d -p 8888:8888 -v ~/jupyter-notebooks/:/ipynb notebook
-
-Note that "~/jupyter-notebooks" is a stand-in for the path to a place on your
-file system where you'd like to save your notebooks. The "docker run" command
-start the Jupyter notebook server running the entire VOEvent environment. You 
-can find the notebook by pointing your browser at http://192.168.59.103:8888.
-
-.. _install docker: https://docs.docker.com/installation/
-.. _docker notebook: https://github.com/caseyjlaw/voevent-docker-notebook
-.. _docker: https://www.docker.com
 .. _pip: https://pip.pypa.io/
 .. _apt: https://en.wikipedia.org/wiki/Advanced_Packaging_Tool
 .. _Debian: http://www.debian.org/
@@ -167,3 +156,33 @@ your while to read `its documentation`_.
 
 .. _Comet: https://github.com/jdswinbank/Comet
 .. _its documentation: http://comet.transientskp.org/
+
+.. _container:
+
+An alternative approach: containerization
+=========================================
+
+.. note::
+
+   This section was contributed by `Casey Law`_.
+
+Finally, you can use `docker`_ to quickly build all of the above for use in
+a Jupyter (`IPython`_) notebook. Docker uses "containerization" (a kind of virtual
+machine) to build entire operating systems and save you a lot of work.
+If you choose to go this route, you'll need to `install docker`_. Then
+download the Dockerfile for the `docker notebook`_ to an empty directory and
+run::
+
+  $ docker build -t notebook .
+  $ docker run -d -p 8888:8888 -v ~/jupyter-notebooks/:/ipynb notebook
+
+Note that ``~/jupyter-notebooks`` is a stand-in for the path to a place on
+your file system where you'd like to save your notebooks. The ``docker run``
+command start the Jupyter notebook server running the entire VOEvent
+environment. You can find the notebook by pointing your browser at
+http://192.168.59.103:8888.
+
+.. _Casey Law: http://w.astro.berkeley.edu/~claw/
+.. _install docker: https://docs.docker.com/installation/
+.. _docker notebook: https://github.com/caseyjlaw/voevent-docker-notebook
+.. _docker: https://www.docker.com
