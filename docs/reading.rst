@@ -72,17 +72,17 @@ identifier both for the author of the event:
 
 .. code-block:: xml
 
-   <AuthorIVORN>ivo://hotwired.org</AuthorIVORN>
+   <AuthorIVORN>ivo://org.hotwired</AuthorIVORN>
 
 and for the event itself:
 
 .. code-block:: xml
 
-   ivo://example/exciting_events#123
+   ivo://org.hotwired/exciting_events#123
 
 The latter is particularly worth noting, as the VOEvent standard assigns
 specific meanings to each part. In this case, we are considering event number
-123 published to the "exciting_events" stream by "example.org". In general, we
+123 published to the "exciting_events" stream by "org.hotwired". In general, we
 expect events to be grouped into streams in this way, where a stream
 represents a specific source of events---a given instrument or a particular
 way of processing the data, say.
@@ -93,7 +93,7 @@ event specifies:
 .. code-block:: xml
 
    <Citations>
-     <EventIVORN cite="followup">ivo://example/exciting_events#1</EventIVORN>
+     <EventIVORN cite="followup">ivo://org.hotwired/exciting_events#1</EventIVORN>
    </Citations>
 
 This means that this VOEvent is reporting a follow-up to a previous

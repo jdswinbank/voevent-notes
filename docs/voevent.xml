@@ -4,7 +4,7 @@
              xsi:schemaLocation="http://www.ivoa.net/xml/VOEvent/v2.0
                                  http://www.ivoa.net/xml/VOEvent/VOEvent-v2.0.xsd"
              version="2.0" role="test"
-             ivorn="ivo://example/exciting_events#123">
+             ivorn="ivo://org.hotwired/exciting_events#123">
   <Who>
     <AuthorIVORN>ivo://hotwired.org</AuthorIVORN>
     <Date>1970-01-01T00:00:00</Date>
@@ -58,6 +58,6 @@
     </Inference>
   </Why>
   <Citations>
-    <EventIVORN cite="followup">ivo://example/exciting_events#1</EventIVORN>
+    <EventIVORN cite="followup">ivo://org.hotwired/exciting_events#1</EventIVORN>
   </Citations>
 </voe:VOEvent>

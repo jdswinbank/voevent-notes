@@ -56,7 +56,7 @@ XML boilerplate that we skipped over) of the root ``VOEvent`` element are access
 dictionary on ``v``::
 
    In [4]: v.attrib['ivorn']
-   Out[4]: 'ivo://example/exciting_events#123'
+   Out[4]: 'ivo://org.hotwired/exciting_events#123'
 
    In [5]: v.attrib['role']
    Out[5]: 'test'
