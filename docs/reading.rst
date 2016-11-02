@@ -80,12 +80,28 @@ and for the event itself:
 
    ivo://org.hotwired/exciting_events#123
 
-The latter is particularly worth noting, as the VOEvent standard assigns
-specific meanings to each part. In this case, we are considering event number
-123 published to the "exciting_events" stream by "org.hotwired". In general, we
-expect events to be grouped into streams in this way, where a stream
-represents a specific source of events---a given instrument or a particular
-way of processing the data, say.
+First, consider the identity of the author: ``org.hotwired``. In `formal IVOA
+terms`_, this should be a “naming authority” which has the right to create
+IVOA-compliant identifers for the resources it creates. In practice, the
+necessary registration material to make this worthwhile for VOEvents isn't yet
+in place, so we'll improvise: choose a string which you are confident will
+usefully identify you (or your facility) to the recipient, and which is
+unlikely to clash with anybody else issuing VOEvents. Using a straightforward
+internet host (DNS) name (like ``hotwired.org``) is discouraged (folks might
+try to resolve it through the normal internet systems, which will fail), but
+reversing it to create something which is uniquely tied to a given
+organization but which can't be confused with a regular host name should work,
+and that's exactly what we've done here.
+
+Now, look at the identity of the event itself. This is particularly worth
+noting, as the VOEvent standard assigns specific meanings to each part. In
+this case, we are considering event number 123 published to the
+``exciting_events`` stream by ``org.hotwired``. In general, we expect events
+to be grouped into streams in this way, where a stream represents a specific
+source of events---a given instrument or a particular way of processing the
+data, say. A single naming authority could manage multiple streams (so we
+could imagine ``org.hotwired`` also publishing to the ``tedious_events``
+stream).
 
 We can refer to other events by specifying their IVORN. For example, this
 event specifies:
@@ -104,12 +120,16 @@ withdraw it altogether. Ultimately, an event aggregation service could group
 together VOEvents which cite each other to build up a full description of a
 particular astronomical event.
 
-In theory, one can go and look up an IVORN in the IVOA registry to find out
-details of the author, the available event streams, and the events themselves.
-In practice, that functionality isn't yet generally available (but it's
-`coming`_).
+At time of writing, there is no central body for VOEvents which creates naming
+authorities or enforces standards on IVORNs. For now, you're simply encouraged
+to structure your IVORNS following the above guidelines. Longer term, `work is
+ongoing`_ to integrate the VOEvent system with the wider VOEvent “registry”
+system, which will help ensure standards are enforced and provide mechanisms
+to look up details of particular authors, available event streams, and the
+events themselves.
 
-.. _coming: http://www.ivoa.net/documents/VOEventRegExt/20140513/index.html
+.. _formal IVOA terms: http://www.ivoa.net/documents/REC/Identifiers/Identifiers-20070302.html#toc-header-14
+.. _work is ongoing: http://www.ivoa.net/documents/VOEventRegExt/20140513/index.html
 
 Unified Content Descriptors
 ===========================
